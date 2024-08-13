@@ -48,7 +48,7 @@ const router = createRouter({
       name: 'login',
       component: () => import('../views/Login.vue'),
       meta: {
-        layouts: 'landing'
+        layouts: 'login'
       },
     },
     {
@@ -56,7 +56,7 @@ const router = createRouter({
       name: 'registration',
       component: () => import('../views/Registration.vue'),
       meta: {
-        layouts: 'landing'
+        layouts: 'login'
       },
     },
   ]

@@ -2,7 +2,7 @@
     <div class="reviews__slider-container">
         <swiper
             :modules="modules"
-            :slides-per-view="3"
+            :slides-per-view="preview"
             :space-between="32"
             :speed="200"
             :loop="true"
@@ -57,6 +57,10 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 export default {
+    data: () => ({
+        preview: 3,
+        windowWidth: window.innerWidth
+    }),
     components: {
       Swiper,
       SwiperSlide,
@@ -75,6 +79,28 @@ export default {
             modules: [Navigation, Pagination, Scrollbar, Autoplay, A11y],
         };
     },
+    methods: {
+        updateSizeWindow () {
+            this.windowWidth = window.innerWidth;
+
+            if (this.windowWidth > 1240) {
+                this.preview = 3
+            }
+
+            if (this.windowWidth < 1240) {
+                this.preview = 2
+            }
+
+            if (this.windowWidth < 760) {
+                this.preview = 1
+            }
+        }
+    },
+
+    mounted () {
+        this.updateSizeWindow();
+        window.addEventListener('resize', this.updateSizeWindow())
+    }
 };
 
 </script>

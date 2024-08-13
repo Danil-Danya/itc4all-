@@ -1,15 +1,17 @@
 <template>
     <section class="site">
-        <div class="site-bg"></div>
-        <header class="header">
-            <Navbar />
-        </header>
-        <main class="main">
-            <Router-view />
-        </main>
-        <footer class="footer">
-            <Footer />
-        </footer>
+        <div class="wrapper">
+            <div class="site-bg"></div>
+            <header class="header">
+                <Navbar />
+            </header>
+            <main class="main">
+                <Router-view />
+            </main>
+            <footer class="footer">
+                <Footer />
+            </footer>
+        </div>
     </section>
 </template>
 
