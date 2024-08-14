@@ -29,6 +29,12 @@
                         </span>
                     </div>
                 </div>
+                <div class="navbar__burgermenu" ref="burger" @click="toggleMoble">
+                    <span class="navbar__burgermenu-line" ref="line" v-for="item in 3"></span>
+                </div>
+                <transition name="navbar">
+                    <MobileNavbar @toggleMoble="toggleMoble" v-show="mobile"/>
+                </transition>
             </div>
         </div>
     </section>
@@ -37,9 +43,11 @@
 <script>
 
 import Arrow from '@/components/icons/navbar/Arrow.vue';
+import MobileNavbar from './MobileNavbar.vue';
 
 export default {
     data: () => ({
+        mobile: false,
         navbarLinks: [
             { 
                 text: 'Главная',
@@ -75,7 +83,41 @@ export default {
     }),
 
     components: {
-        Arrow
+        Arrow,
+        MobileNavbar
+    },
+
+    methods: {
+        toggleMoble () {
+            this.mobile = !this.mobile;
+
+            const { line, burger } = this.$refs;
+
+            if (this.mobile) {
+                line[0].style.transform = 'rotate(45deg)';
+                line[2].style.transform = 'rotate(-45deg)';
+
+                line[0].style.position = 'absolute';
+                line[2].style.position = 'absolute';
+
+                line[1].style.display = 'none';
+
+                
+                burger.classList.add('navbar__burgermenu-active');
+            }
+            else {
+                line[0].style.transform = 'rotate(0)';
+                line[2].style.transform = 'rotate(0)';
+
+                line[0].style.position = 'relative';
+                line[2].style.position = 'relative';
+
+                line[1].style.display = 'block';
+
+                
+                burger.classList.remove('navbar__burgermenu-active');
+            }
+        }
     }
 }
 

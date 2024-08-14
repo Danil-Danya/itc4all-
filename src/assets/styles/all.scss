@@ -79,6 +79,61 @@ a {
         justify-content: space-between;
         align-items: center;
         height: 100px;
+        position: relative;
+    }
+
+
+    &__mobile {
+        width: 100%;
+        height: calc(100vh - 120px);
+        background: #10338b;
+        position: absolute;
+        left: 0;
+        top: 100px;
+        z-index: 999;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: -2px 2px 20px 0px rgba(0, 0, 0, 0.10);
+
+        &-ul {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        &-link {
+            color: #FFF;
+            font-family: mb;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            display: block;
+            width: 100%;
+            border-bottom: 1px solid #fff;
+        }
+    }
+
+    &__burgermenu {
+        width: 30px;
+        height: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &-active {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        &-line {
+            display: block;
+            width: 30px;
+            height: 2px;
+            background: #376FFF;
+            transition: 300ms;
+        }
     }
 
     &__text {
@@ -123,6 +178,10 @@ a {
             color: #376FFF;
             background: #efefef;
             border-radius: 10px;
+        }
+
+        @include media ($md) {
+            display: none;
         }
     }
 
@@ -499,9 +558,9 @@ a {
         width: 100%;
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
-
+        
         @include media ($lg) {
+            flex-wrap: wrap;
             display: flex;
             justify-content: center;
             gap: 20px;
@@ -1382,6 +1441,20 @@ a {
 .accordione-leave-to {
     opacity: 0;
     height: 0px;
+}
+
+
+/* we will explain what these classes do next! */
+.navbar-enter-active,
+.navbar-leave-active {
+    transition: all 0.3s ease;
+}
+
+.navbar-enter-from,
+.navbar-leave-to {
+    height: 0;
+    opacity: 0;
+    //transform: scaleY(0);
 }
 
 @keyframes translateWoomanIndexPage {
