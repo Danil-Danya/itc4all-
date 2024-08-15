@@ -15,6 +15,9 @@
 <script>
 import FaqCard from './FaqCard.vue';
 
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+
 export default {
     data: () => ({
         faqData: [
@@ -28,6 +31,42 @@ export default {
     }),
     components: {
         FaqCard
+    },
+
+    mounted () {
+        gsap.fromTo('.faq__card', {
+            y: 300,
+            opacity: 0,
+        },{
+            y: 0,
+            opacity: 1,
+            duration: 0.5,
+            stagger: 1,
+            scrollTrigger: {
+                trigger: '.faq__container',
+                start: 'top 80%',
+                end: 'bottom 80%',
+                scrub: 0.5,
+            }
+        });
+
+        if (window.clientWidth < 950) {
+            gsap.fromTo(item, {
+                y: 50,
+                opacity: 0,
+            }, {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                stagger: 1,
+                scrollTrigger: {
+                    trigger: trigger,
+                    start: 'top 80%',
+                    end: 'bottom 80%',
+                    scrub: 4,
+                }
+            });
+        }
     }
 }
 
