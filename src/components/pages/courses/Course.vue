@@ -4,7 +4,7 @@
             <div class="course__container">
                 <h2 class="title course__title">Курсы</h2>
                 <div class="course__content">
-                    <CoureseCard v-for="item in 9"/>
+                    <CoureseCard v-for="item in courses.rows" :key="item" :course="item"/>
                 </div>
             </div>
         </div>
@@ -13,15 +13,35 @@
 
 <script>
 import CoureseCard from './CourseCard.vue';
+
+import { mapActions, mapGetters } from 'vuex';
+
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 
 export default {
+    data: () => ({
+        courses: []
+    }),
+
     components: {
         CoureseCard
     },
 
-    mounted () {
+    computed: {
+        ...mapGetters(['getCourses']),
+    },
+
+    methods: {
+        ...mapActions(['fetchCourses'])
+    },
+
+    async mounted () {
+        await this.fetchCourses({ include: true });
+        this.courses = this.getCourses;
+        console.log(this.courses);
+        
+
         this.$nextTick(() => {
             gsap.fromTo('.course__card', {
                 y: 300,

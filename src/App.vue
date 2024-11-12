@@ -4,7 +4,7 @@
             <component :is="layout"> 
                 <Router-view />
             </component>
-    </div>
+        </div>
     </div>
 </template>
 
@@ -12,7 +12,6 @@
 
 import LandingLayout from './layouts/LandingLayout.vue';
 import LoginLayout from './layouts/LoginLayout.vue';
-import MentorLayout from './layouts/MentorLayout.vue';
 import SiteLayout from './layouts/SiteLayout.vue';
 import UserLayout from './layouts/UserLayout.vue';
 
@@ -21,13 +20,14 @@ export default {
     components: {
         LandingLayout,
         LoginLayout,
-        MentorLayout,
         SiteLayout,
         UserLayout
     },
 
     computed: {
-        layout () {          
+        layout () {     
+            console.log(this.$route.meta.layouts);
+                 
             return `${this.$route.meta.layouts || 'login'}-layout`
         }
     },

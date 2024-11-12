@@ -1,16 +1,19 @@
 <template>
     <div class="mentor__card">
         <div class="mentor__avatar">
-            <img src="@/assets/images/mentors/avatar.png" alt="Mentors" class="mentor__avatar-img">
+            <img :src="`${staticPath}images/${mentor.mentors_previews.path}`" alt="Mentors"
+                class="mentor__avatar-img">
         </div>
         <div class="mentor__info">
-            <h3 class="mentor__info-title">Durdona Bakhronova</h3>
-            <p class="mentor__text">Frontend разработчик</p>
-            <p class="mentor__text">Опыт: 5years</p>
+            <h3 class="mentor__info-title"> {{ mentor.first_name }} {{ mentor.last_name }} </h3>
+            <p class="mentor__text"> {{ mentor.speciality }} </p>
+            <p class="mentor__text">Опыт: {{ mentor.experience }} лет</p>
         </div>
         <div class="mentor__icons-container">
-            <span class="mentor__icons" v-for="item in 3">
-                <In />
+            <span class="mentor__icons" v-for="item in socials">
+                <a :href="item.icon === 'gmail' ? `mailto:${item.link}` : item.link">
+                    <component :is="item.icon" />
+                </a>
             </span>
         </div>
     </div>
@@ -19,10 +22,47 @@
 <script>
 
 import In from '@/components/icons/mentor/In.vue';
+import Instagram from '@/components/icons/mentor/Instagram.vue';
+import Telegram from '@/components/icons/mentor/Telegram.vue';
+import Github from '@/components/icons/mentor/Github.vue';
+import Gmail from '@/components/icons/mentor/gmail.vue';
+
+//`http://185.170.196.41/images/${mentor.mentors_previews.path}`
 
 export default {
+    data: () => ({
+        socials: []
+    }),
+
     components: {
-        In
+        In,
+        Instagram,
+        Telegram,
+        Github,
+        Gmail
+    },
+
+    props: {
+        mentor: {
+            type: Object,
+            required: true
+        }
+    },
+
+    mounted () {
+        for (let key in this.mentor.mentros_social) {
+            if (key !== 'id') {
+                let icon = {
+                    icon: key,
+                    link: this.mentor.mentros_social[key]
+                }
+    
+                this.socials.push(icon);
+            }
+        }
+
+        console.log(this.socials);
+        
     }
 }
 

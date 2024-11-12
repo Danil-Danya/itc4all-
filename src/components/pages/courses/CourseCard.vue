@@ -2,25 +2,42 @@
     <div class="course__card">
         <div class="course__preview">
             <span class="course-bg">Preview</span>
-            <img src="@/assets/images/courses/course.png" alt="Course" class="course__preview-img">
+            <img :src="`${staticPath}images/${course.course_preview.path}`" alt="Course" class="course__preview-img">
         </div>
         <div class="course__info">
             <div class="course__name">
-                <h2 class="course__name-title">Курс Экспресс бекенд</h2>
+                <h2 class="course__name-title">{{ course.name }}</h2>
             </div>
             <div class="course__data">
                 <div class="course__mentor-name">
                     <h3 class="course__info-title">Преподователь: </h3>
-                    <p class="course__info-text">Умид Маликов</p>
+                    <p class="course__info-text">{{ course.mentor }}</p>
                 </div>
                 <div class="course__lessons-info">
                     <h3 class="course__info-title">Занятий в курсе: </h3>
-                    <p class="course__info-text">32</p>
+                    <p class="course__info-text">{{ course.videos.length }}</p>
                 </div>
             </div>
             <div class="course__button-container">
-                <router-link to="" class="course__button">Перейти на страницу курса</router-link>
+                <router-link :to="`/course/${course.id}`" class="course__button">Перейти на страницу курса</router-link>
             </div>
         </div>
     </div>
 </template>
+
+
+<script>
+
+
+export default {
+    props: {
+        course: {
+            type: Object,
+            required: true
+        }
+    }
+}
+
+
+</script>
+

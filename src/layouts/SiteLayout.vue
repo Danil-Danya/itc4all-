@@ -32,30 +32,20 @@ export default {
         Footer
     },
 
-    mounted () {
-        this.$nextTick(() => {
-            gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-
-            ScrollSmoother.create({
-                wrapper: '.wrapper',
-                content: '.content',
-                smooth: 1
-            })
-        })
-
-        this.$router.beforeEach((to, from, next) => {
-            if (this.smoother) {
-                this.smoother.kill();
+    watch: {
+        '$route': {
+            deep: true,
+            handler () {
+                ScrollTrigger.refresh();
             }
-            next();
-        });
+        }
     },
 
-    beforeDestroy() {
-        if (this.smoother) {
-            this.smoother.kill(); // Уничтожаем ScrollSmoother
-        }
-    }
+    mounted () {
+        this.$nextTick(() => {
+            gsap.registerPlugin(ScrollTrigger);
+        })
+    },
 }
 
 
