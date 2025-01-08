@@ -1,0 +1,75 @@
+{
+    "navbar": {
+        "navigation": [
+            "Home",
+            "Courses",
+            "Mentors",
+            "Events",
+            "FAQ"
+        ],
+        "authorization": [
+            "Login",
+            "Registration"
+        ]
+    },
+    "header": {
+        "titles": [
+            "Relevant training programs",
+            "Mentorship support",
+            "Flexibility and comfort",
+            "A community of like-minded individuals"
+        ]
+    },
+    "about": {
+        "title": "Who is the program for?",
+        "subtitleLeft": "You will fit in perfectly if:",
+        "subtitleRight": "The program is NOT suitable if:",
+        "left": [
+            "You don’t want to learn alone. With us, you gain access to a community of like-minded individuals where it's easy to find support, advice, and motivating friends.",
+            "You strive for success. Our programs are designed with market demands in mind, and we will help you build the skills that lead to your dream career.",
+            "You value practical experience. Instead of dry theory, we focus on real projects that you can add to your portfolio.",
+            "You are open to continuous learning and development. In IT, the ability to adapt is crucial, and with us, you will always be up to date with the latest technologies."
+        ],
+        "right": [
+            "You are not ready to dedicate time to learning. Acquiring new knowledge takes time and energy, and success primarily depends on your engagement.",
+            "You are not interested in applying practical skills. Our programs are designed for those who are ready to dive into real tasks and actively use the knowledge gained.",
+            "You are looking for ready-made solutions. In IT, the ability to solve problems independently and adapt to new situations is essential; StartIT.uz is designed for those who are ready to grow and develop."
+        ]
+    },
+    "reviews": {
+        "slides": [
+            {
+                "name": "Nargiza",
+                "role": "студент курса «Веб-разработка»",
+                "text": "Here, I’m receiving quality education at an affordable price."
+            },
+            {
+                "name": "Gulnora",
+                "role": "студент курса «Разработка на Python»",
+                "text": "I have had consultations with two mentors about building a career in IT. They provided detailed answers to my questions and shared valuable resources."
+            },
+            {
+                "name": "Sherzod",
+                "role": "студент курса «UI/UX Дизайн»",
+                "text": "I like how the courses are designed to integrate practical applications."
+            },
+            {
+                "name": "Saodat",
+                "role": "студент курса «Data Science»",
+                "text": "The platform allows me to learn at my own pace and at times that are convenient for me."
+            }
+        ]
+    },
+    "form": {
+        "title": "Contact Us",
+        "inputName": "Full Name",
+        "inputMessage": "Send a Message",
+        "button": "Submit"
+    },
+    "courses": {
+        "title": "Courses",
+        "mentor": "Mentor:",
+        "lessonCount": "Number of lessons:",
+        "lessonLink": "Go to Course Page"
+    }
+}

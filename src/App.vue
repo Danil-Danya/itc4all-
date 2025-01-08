@@ -26,14 +26,9 @@ export default {
 
     computed: {
         layout () {     
-            console.log(this.$route.meta.layouts);
-                 
             return `${this.$route.meta.layouts || 'login'}-layout`
         }
     },
-
-    mounted () {
-    }
 }
 
 </script>

@@ -35,6 +35,8 @@ export default {
         currentIndex: 0
     }),
     mounted() {
+        const locale = this.$i18n.locale;
+        this.titles = this.$i18n.messages[locale].header.titles;
         this.animateTitles();
     },
     methods: {

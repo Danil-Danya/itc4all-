@@ -37,6 +37,14 @@ const router = createRouter({
       },
     },
     {
+      path: '/mentor/:mentor_name',
+      name: 'mentor',
+      component: () => import('../views/Mentor.vue'),
+      meta: {
+        layouts: 'site'
+      },
+    },
+    {
       path: '/faq',
       name: 'faq',
       component: () => import('../views/Faq.vue'),

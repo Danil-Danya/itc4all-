@@ -10,12 +10,13 @@
             <p class="mentor__text">Опыт: {{ mentor.experience }} лет</p>
         </div>
         <div class="mentor__icons-container">
-            <span class="mentor__icons" v-for="item in socials">
+            <span class="mentor__icons" v-for="item in socials" :key="item">
                 <a :href="item.icon === 'gmail' ? `mailto:${item.link}` : item.link">
                     <component :is="item.icon" />
                 </a>
             </span>
         </div>
+        <router-link :to="getMentorLink" class="mentor__link" v-if="profile">Личная сессия</router-link>
     </div>
 </template>
 
@@ -27,11 +28,14 @@ import Telegram from '@/components/icons/mentor/Telegram.vue';
 import Github from '@/components/icons/mentor/Github.vue';
 import Gmail from '@/components/icons/mentor/gmail.vue';
 
+import { mapActions, mapGetters } from 'vuex';
+
 //`http://185.170.196.41/images/${mentor.mentors_previews.path}`
 
 export default {
     data: () => ({
-        socials: []
+        socials: [],
+        profile: {}
     }),
 
     components: {
@@ -49,7 +53,25 @@ export default {
         }
     },
 
-    mounted () {
+    computed: {
+        ...mapGetters(['getProfile']),
+
+        getMentorLink () {
+            let mentorLink = `/mentor/${this.mentor.first_name}-${this.mentor.last_name}`;
+            let mentorFormatLink = mentorLink.toLocaleLowerCase() + '?mentor_id=' + this.mentor.id;
+            
+            return mentorFormatLink;
+        }
+    },
+
+    methods: {
+        ...mapActions(['fetchProfile'])
+    },
+
+    async mounted () {
+        await this.fetchProfile();
+        this.profile = this.getProfile;
+
         for (let key in this.mentor.mentros_social) {
             if (key !== 'id') {
                 let icon = {
@@ -60,9 +82,6 @@ export default {
                 this.socials.push(icon);
             }
         }
-
-        console.log(this.socials);
-        
     }
 }
 

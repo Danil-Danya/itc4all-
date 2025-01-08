@@ -22,7 +22,8 @@ const registration = async (data) => {
                 success: true 
             };
         }
-    } catch (error) {
+    } 
+    catch (error) {
         console.log(error);
         return { success: false, message: "Ошибка при регистрации" };
     }
@@ -92,12 +93,12 @@ const fetchOneCourese = async (id, params) => {
     return response.data;
 }
 
-const fetchVideo = async (id, range) => { // 1 MB
+const fetchVideo = async (id) => {
     const response = await api.get(`videos/${id}`, {
         responseType: 'blob',
         headers: {
-            Range: range
-        }
+            Range: 'bytes=0-',
+        },
     });
     return response.data;
 };

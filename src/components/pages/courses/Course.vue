@@ -2,7 +2,7 @@
     <section class="courese">
         <div class="container">
             <div class="course__container">
-                <h2 class="title course__title">Курсы</h2>
+                <h2 class="title course__title">{{ $t('courses.title') }}</h2>
                 <div class="course__content">
                     <CoureseCard v-for="item in courses.rows" :key="item" :course="item"/>
                 </div>

@@ -22,15 +22,26 @@
                             </li>
                         </ul>   
                     </div>
-                    <div class="navbar__locales">
-                        <p class="navbar__text">Рус</p>
-                        <span class="navbar__icon">
-                            <Arrow />
-                        </span>
+                    <div class="navbar__locales-container" @click="toggleLangs">
+                        <div class="navbar__locales">
+                            <p class="navbar__text">{{ locale }}</p>
+                            <span class="navbar__icon" ref="icon">
+                                <Arrow />
+                            </span>
+                        </div>
+                        <Transition name="bounce" duration="190">
+                            <div class="navbar__locales-dropdown" v-show="lang">
+                                <ul class="navbar__locales-list">
+                                    <li v-for="(lang, index) in langs" :key="lang" @click="selectLang(index)">
+                                        <p class="navbar__text navbar__locales-button">{{ lang }}</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </Transition>
                     </div>
                 </div>
                 <div class="navbar__burgermenu" ref="burger" @click="toggleMoble">
-                    <span class="navbar__burgermenu-line" ref="line" v-for="item in 3"></span>
+                    <span class="navbar__burgermenu-line" ref="line" v-for="item in 3" :key="item"></span>
                 </div>
                 <transition name="navbar">
                     <MobileNavbar @toggleMoble="toggleMoble" v-show="mobile"/>
@@ -48,6 +59,10 @@ import MobileNavbar from './MobileNavbar.vue';
 export default {
     data: () => ({
         mobile: false,
+        lang: false,
+        langs: ['Рус', 'Eng', 'Uzb'],
+        locales: ['rus', 'eng', 'uzb'],
+        locale: 'Рус',
         navbarLinks: [
             { 
                 text: 'Главная',
@@ -88,6 +103,25 @@ export default {
     },
 
     methods: {
+        toggleLangs () {
+            this.lang = !this.lang;
+
+            const icon = this.$refs.icon;
+            if (this.lang) 
+                icon.style.transform = 'rotate(180deg)';
+            else 
+                icon.style.transform = 'rotate(0deg)';
+        },
+
+        selectLang (index) {
+            localStorage.setItem('locale', this.langs[index]);
+
+            this.locale = this.langs[index];
+            this.$i18n.locale = this.locales[index];
+
+            location.reload();
+        },
+
         toggleMoble () {
             this.mobile = !this.mobile;
 
@@ -117,6 +151,72 @@ export default {
                 
                 burger.classList.remove('navbar__burgermenu-active');
             }
+        }
+    },
+
+    mounted () {
+        const lang = localStorage.getItem('locale');
+
+        if (!lang) {
+            localStorage.setItem('locale', 'Рус');
+            localStorage.setItem('lang', this.langs);
+        }
+
+        if (lang === this.langs[0]) {
+            const messages = this.$i18n.messages['rus'];
+            this.$i18n.locale = 'rus';
+
+            this.navbarLinks = this.navbarLinks.map((link, index) => {
+                return {
+                    to: link.to,
+                    text: messages.navbar.navigation[index]
+                }
+            })
+
+            this.registrationLinks = this.registrationLinks.map((link, index) => {
+                return {
+                    to: link.to,
+                    text: messages.navbar.authorization[index]
+                }
+            })
+        }
+
+        if (lang === this.langs[1]) {
+            const messages = this.$i18n.messages['eng'];
+            this.$i18n.locale = 'eng';
+
+            this.navbarLinks = this.navbarLinks.map((link, index) => {
+                return {
+                    to: link.to,
+                    text: messages.navbar.navigation[index]
+                }
+            })
+
+            this.registrationLinks = this.registrationLinks.map((link, index) => {
+                return {
+                    to: link.to,
+                    text: messages.navbar.authorization[index]
+                }
+            })
+        }
+
+        if (lang === this.langs[2]) {
+            const messages = this.$i18n.messages['uzb'];
+            this.$i18n.locale = 'uzb';
+
+            this.navbarLinks = this.navbarLinks.map((link, index) => {
+                return {
+                    to: link.to,
+                    text: messages.navbar.navigation[index]
+                }
+            })
+
+            this.registrationLinks = this.registrationLinks.map((link, index) => {
+                return {
+                    to: link.to,
+                    text: messages.navbar.authorization[index]
+                }
+            })
         }
     }
 }

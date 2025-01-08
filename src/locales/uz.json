@@ -1,0 +1,75 @@
+{
+    "navbar": {
+        "navigation": [
+            "Bosh sahifa",
+            "Kurslar",
+            "Mentorlar",
+            "Voqealar",
+            "Savol-javob"
+        ],
+        "authorization": [
+            "Kirish",
+            "Ro‘yxatdan o‘tish"
+        ]
+    },
+    "header": {
+        "titles": [
+            "Aktual ta'lim dasturlari",
+            "Mentorlar yordami",
+            "Qulaylik va moslashuvchanlik",
+            "O‘xshash fikrli jamoa"
+        ]
+    },
+    "about": {
+        "title": "Dastur kimlar uchun mo'ljallangan",
+        "subtitleLeft": "Siz kursimizga juda mos tushasiz, bunda siz:",
+        "subtitleRight": "Dasturimiz unchalik samarali bo'lmasligi mumkin, agar:",
+        "left": [
+            "Jamoa bilan ishlashni istasangiz. Biz bilan siz hamfikrlar jamiyatiga qo'shilasiz, bu yerda qo‘llab-quvvatlash, maslahat va ilhomlantiruvchi do‘stlarni topish oson.",
+            "Muvaffaqiyat sari intilasiz. Bizning dasturlarimiz bozor talablarini hisobga olgan holda ishlab chiqilgan va biz sizga orzuingizdagi karyeraga yetaklaydigan ko'nikmalarni shakllantirishga yordam beramiz.",
+            "Amaliy tajribani qadrlaysiz. Quruq nazariya o'rniga, biz real loyihalarga e’tibor qaratamiz, ular sizning portfelingizning bir qismiga aylanishi mumkin.",
+            "Doimiy o'rganishga va rivojlanishga ochiqsiz. IT sohasida moslashuvchanlik muhim va biz bilan siz har doim so'nggi texnologiyalardan xabardor bo'lasiz."
+        ],
+        "right": [
+            "O‘qishga vaqt ajratishga tayyor bo‘lmasangiz. Yangi bilimlarni egallash vaqt va kuch talab qiladi va muvaffaqiyat, birinchi navbatda, sizning ishtiyoqingizga bog'liq.",
+            "Amaliy ko‘nikmalarga qiziqmasangiz. Bizning dasturlarimiz real vazifalarga sho‘ng‘ishga va olingan bilimlarni faol qo‘llashga tayyor bo‘lganlar uchun mo‘ljallangan.",
+            "Tayyor yechimlarni izlayotgan bo‘lsangiz. IT sohasida mustaqil yechim topish va yangi narsalarga moslashish muhim; StartIT.uz o‘sishga va rivojlanishga tayyor bo‘lganlar uchun yaratilgan."
+        ]
+    },
+    "reviews": {
+        "slides": [
+            {
+                "name": "Nargiza",
+                "role": "студент курса «Веб-разработка»",
+                "text": "Men bu yerda hamyonbop narxga sifatli ta’lim olyapman."
+            },
+            {
+                "name": "Gulnor",
+                "role": "студент курса «Разработка на Python»",
+                "text": " 2 nafar mentor bilan IT sohasida karyera qurish bo‘yicha suhbatlashdim."
+            },
+            {
+                "name": "Sherzod",
+                "role": "студент курса «UI/UX Дизайн»",
+                "text": "Kurslarning amaliyot bilan bog‘lab ishlab chiqilgani yoqdi."
+            },
+            {
+                "name": "Saodat",
+                "role": "студент курса «Data Science»",
+                "text": "Platforma menga o‘zimga qulay vaqt hamda o‘zimga qulay tezlikda ta’lim olish imkonini beryapti."
+            }
+        ]
+    },
+    "form": {
+        "title": "Biz bilan bog‘laning",
+        "inputName": "Ism-sharifingiz",
+        "inputMessage": "Xabar yuborish",
+        "button": "Yuborish"
+    },
+    "courses": {
+        "title": "Kurslar",
+        "mentor": "Kurs mentori:",
+        "lessonCount": "Darslar soni:",
+        "lessonLink": "Kurs sahifasiga o‘tish"
+    }
+}

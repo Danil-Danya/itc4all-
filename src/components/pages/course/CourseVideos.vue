@@ -1,6 +1,6 @@
 <template>
     <div class="courses__videos-container">
-        <div class="courses__videos-item" v-for="video in videos" :key="videos">
+        <div class="courses__videos-item" v-for="video in videos" :key="video">
             <div class="courses__videos-icon">
                 <Play />
             </div>

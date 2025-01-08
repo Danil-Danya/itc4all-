@@ -10,16 +10,16 @@
             </div>
             <div class="course__data">
                 <div class="course__mentor-name">
-                    <h3 class="course__info-title">Преподователь: </h3>
+                    <h3 class="course__info-title">{{ $t('courses.mentor') }} </h3>
                     <p class="course__info-text">{{ course.mentor }}</p>
                 </div>
                 <div class="course__lessons-info">
-                    <h3 class="course__info-title">Занятий в курсе: </h3>
+                    <h3 class="course__info-title">{{ $t('courses.lessonCount') }} </h3>
                     <p class="course__info-text">{{ course.videos.length }}</p>
                 </div>
             </div>
             <div class="course__button-container">
-                <router-link :to="`/course/${course.id}`" class="course__button">Перейти на страницу курса</router-link>
+                <router-link :to="`/course/${course.id}`" class="course__button">{{ $t('courses.lessonLink') }}</router-link>
             </div>
         </div>
     </div>
