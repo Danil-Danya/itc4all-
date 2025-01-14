@@ -29,6 +29,15 @@ export default {
             return `${this.$route.meta.layouts || 'login'}-layout`
         }
     },
+
+    mounted () {
+        const lang = localStorage.getItem('locale');
+
+        if (!lang) {
+            localStorage.setItem('locale', 'Рус');
+            localStorage.setItem('lang', this.langs);
+        }
+    }
 }
 
 </script>

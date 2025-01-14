@@ -21,19 +21,18 @@
         ]
     },
     "about": {
-        "title": "Who is the program for?",
-        "subtitleLeft": "You will fit in perfectly if:",
-        "subtitleRight": "The program is NOT suitable if:",
+        "title": "Who the program is for",
+        "subtitleLeft": "You’ll fit in perfectly if:",
+        "subtitleRight": "The program might not suit you if:",
         "left": [
-            "You don’t want to learn alone. With us, you gain access to a community of like-minded individuals where it's easy to find support, advice, and motivating friends.",
-            "You strive for success. Our programs are designed with market demands in mind, and we will help you build the skills that lead to your dream career.",
-            "You value practical experience. Instead of dry theory, we focus on real projects that you can add to your portfolio.",
-            "You are open to continuous learning and development. In IT, the ability to adapt is crucial, and with us, you will always be up to date with the latest technologies."
+            "You strive for success. Our programs are designed with market demands in mind, helping you build the skills needed to achieve your dream career.",
+            "You value practical experience. Instead of dry theory, we focus on real-world projects you can add to your portfolio.",
+            "You are open to continuous learning and growth. In IT, adaptability is crucial, and with us, you'll stay updated on the latest technologies."
         ],
         "right": [
-            "You are not ready to dedicate time to learning. Acquiring new knowledge takes time and energy, and success primarily depends on your engagement.",
-            "You are not interested in applying practical skills. Our programs are designed for those who are ready to dive into real tasks and actively use the knowledge gained.",
-            "You are looking for ready-made solutions. In IT, the ability to solve problems independently and adapt to new situations is essential; StartIT.uz is designed for those who are ready to grow and develop."
+            "You are not ready to dedicate time to learning. Gaining new knowledge requires time and energy, and success depends largely on your commitment.",
+            "You are not interested in applying practical skills. Our programs are designed for those willing to tackle real-world challenges and actively use their knowledge.",
+            "You are looking for ready-made solutions. In IT, problem-solving and adaptability are key; StartIT.uz is for those ready to grow and develop."
         ]
     },
     "reviews": {
@@ -71,5 +70,116 @@
         "mentor": "Mentor:",
         "lessonCount": "Number of lessons:",
         "lessonLink": "Go to Course Page"
-    }
+    },
+    "course": {
+        "price": "Course Price",
+        "mentor": "Mentor:",
+        "programTitle": "Course Program",
+        "play": "Start Lesson"
+    },
+    "mentors": {
+        "title": "Mentors",
+        "experience": "years of experience",
+        "session": "Personal session"
+    },
+    "events": {
+        "title": "Events and Activities"
+    },
+    "faq": {
+    "title": "Frequently Asked Questions",
+    "questions": [
+            {
+                "question": "I’m new to IT. Are the courses on this platform suitable for me?",
+                "text": "The platform offers courses at various levels. Each course page specifies the knowledge and skills required to enroll."
+            },
+            {
+                "question": "Will I receive a certificate upon completing a course?",
+                "text": "Yes, absolutely. If you took a free course, you can purchase the certificate for that course. If you paid for the course, the certificate is provided at no extra cost."
+            },
+            {
+                "question": "Who are the mentors, and what does booking a mentor mean?",
+                "text": "Mentors are experienced professionals who have been successfully working in various IT fields for several years. Booking a mentor means scheduling a time for an online consultation with them."
+            },
+            {
+                "question": "What is an online consultation with a mentor?",
+                "text": "An online consultation with a mentor is a 30-minute virtual meeting held on the Zoom platform. During the session, you can get answers to your questions about IT education, choosing a specialization, building a career, developing IT projects, or managing them. There is no specific program for the consultation. To make the most of the opportunity, we recommend preparing your questions in advance."
+            },
+            {
+                "question": "Do I need to create a Zoom account to book a mentor?",
+                "text": "No, registering on our platform is sufficient."
+            }
+        ]
+    },
+    "login": {
+        "login": "Login",
+        "email": "Email address",
+        "password": "Password"
+    },
+    "registration": {
+        "registration": "Registration",
+        "email": "Email",
+        "password": "Password",
+        "firstName": "Your first name",
+        "lastName": "Your last name"
+    },
+    "footer": [
+    {
+        "title": "Site Menu",
+        "links": [
+            {
+                "text": "Home",
+                "link": "/"
+            },
+            {
+                "text": "Courses",
+                "link": "/courses"
+            },
+            {
+                "text": "Mentors",
+                "link": "/mentors"
+            },
+            {
+                "text": "News",
+                "link": "/events"
+            },
+            {
+                "text": "FAQ",
+                "link": "/faq"
+            }
+        ]
+    },
+    {
+        "title": "Register",
+        "links": [
+            {
+                "text": "Login",
+                "link": "/login"
+            },
+            {
+                "text": "Register",
+                "link": "/registration"
+            }
+        ]
+    },
+    {
+        "title": "Contact Information",
+        "links": [
+                {
+                    "text": "+998 (33) 999 99 99",
+                    "icon": "Phone",
+                    "link": "tel:+998339999999"
+                },
+                {
+                    "text": "itc4allcompany@gmail.com",
+                    "icon": "Email",
+                    "link": "mailto:itc4allcompany@gmail.com"
+                },
+                {
+                    "text": "Tashkent city, Almazar district, Sagban street, Dead End 30, 79",
+                    "icon": "Location",
+                    "link": "https://maps.app.goo.gl/EZdHKLT9jytN43pG8"
+                }
+            ]
+        }
+    ]      
 }

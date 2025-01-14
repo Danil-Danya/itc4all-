@@ -8,15 +8,15 @@
                     </router-link>
                 </div>
                 <form class="login__form">
-                    <h2 class="login__title">Войти</h2>
+                    <h2 class="login__title">{{ $t('login.login') }}</h2>
                     <div class="login__form-container">
                         <div class="login__input-container">
-                            <label for="" class="login__label">Почта</label>
+                            <label for="" class="login__label">{{ $t('login.email') }}</label>
                             <input type="email" class="login__input" v-model="email">
                             <p class="login__message"></p>
                         </div>
                         <div class="login__input-container">
-                            <label for="" class="login__label">Пароль</label>
+                            <label for="" class="login__label">{{ $t('login.password') }}</label>
                             <input type="password" class="login__input" v-model="password">
                             <p class="login__message"></p>
                         </div>

@@ -8,9 +8,9 @@
         </div>
         <div class="courses__info">
             <h2 class="courses__title">{{ preview.title }}</h2>
-            <p class="courses__mentor">Mentor: {{ preview.mentor }}</p>
+            <p class="courses__mentor">{{ $t('course.mentor') }} {{ preview.mentor }}</p>
             <div class="courses__price-container">
-                <h2 class="courses__price-title">Цена курса</h2>
+                <h2 class="courses__price-title">{{ $t('course.price') }}</h2>
                 <p class="courses__price-now">{{ preview.price }} so'm</p>
                 <p class="courses__price-full">{{ preview.fullPrice }} so'm</p>
                 <form id="form-payme" class="courses__info-form" method="POST" action="https://checkout.paycom.uz/" v-if="preview">

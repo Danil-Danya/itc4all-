@@ -99,6 +99,16 @@ export default {
         Phone,
         Location,
         Email
+    },
+
+    mounted () {
+        const locales = this.$i18n.locale;
+        this.footerData = this.$i18n.messages[locales].footer;
+
+        console.log(this.footerData);
+        console.log(this.$i18n.messages[locales].footer);
+        
+        
     }
 }
 

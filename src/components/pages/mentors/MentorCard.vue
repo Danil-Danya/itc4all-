@@ -7,7 +7,7 @@
         <div class="mentor__info">
             <h3 class="mentor__info-title"> {{ mentor.first_name }} {{ mentor.last_name }} </h3>
             <p class="mentor__text"> {{ mentor.speciality }} </p>
-            <p class="mentor__text">Опыт: {{ mentor.experience }} лет</p>
+            <p class="mentor__text">{{ mentor.experience }} {{ $t('mentors.experience') }}</p>
         </div>
         <div class="mentor__icons-container">
             <span class="mentor__icons" v-for="item in socials" :key="item">
@@ -16,7 +16,7 @@
                 </a>
             </span>
         </div>
-        <router-link :to="getMentorLink" class="mentor__link" v-if="profile">Личная сессия</router-link>
+        <router-link :to="getMentorLink" class="mentor__link" v-if="profile">{{ $t('mentors.session') }}</router-link>
     </div>
 </template>
 

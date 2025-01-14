@@ -2,7 +2,7 @@
     <section class="faq">
         <div class="container">
             <div class="faq__container">
-                <h2 class="title faq__title">FAQ</h2>
+                <h2 class="title faq__title">{{ $t('faq.title') }}</h2>
                 <div class="faq__content">
                     <FaqCard v-for="item in faqData" :question="item.question" :answer="item.text"/>
                 </div>
@@ -34,6 +34,9 @@ export default {
     },
 
     mounted () {
+        const locale = this.$i18n.locale;
+        this.faqData = this.$i18n.messages[locale].faq.questions
+
         gsap.fromTo('.faq__card', {
             y: 300,
             opacity: 0,

@@ -2,7 +2,7 @@
     <section class="mentor">
         <div class="container">
             <div class="mentor__container">
-                <h2 class="title mentor__title">Менторы</h2>
+                <h2 class="title mentor__title">{{ $t('mentors.title') }}</h2>
                 <div class="mentor__content">
                     <MentorCard v-for=" item in mentors" :mentor="item" :key="item"/>
                 </div>

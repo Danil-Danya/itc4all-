@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="events__container">
-            <h1 class="title events__title">События и мероприятия</h1>
+            <h1 class="title events__title">{{ $t('events.title') }}</h1>
             <div class="events__content">
                 <div class="events__item" v-for="item in events" :key="item">
                     <EventsCard :card="item" />

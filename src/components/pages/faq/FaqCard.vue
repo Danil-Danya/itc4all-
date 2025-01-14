@@ -1,8 +1,8 @@
 <template>
-    <div class="faq__card">
+    <div class="faq__card" @click="toggleAccordione">
         <div class="faq__card-content">
             <div class="faq__card-inital">
-                <div class="faq__icon-custom" ref="icon" @click="toggleAccordione">
+                <div class="faq__icon-custom" ref="icon">
                     <span class="faq__icon-line"></span>
                     <span class="faq__icon-line"></span>
                 </div>

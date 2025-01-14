@@ -21,19 +21,18 @@
         ]
     },
     "about": {
-        "title": "Dastur kimlar uchun mo'ljallangan",
-        "subtitleLeft": "Siz kursimizga juda mos tushasiz, bunda siz:",
-        "subtitleRight": "Dasturimiz unchalik samarali bo'lmasligi mumkin, agar:",
+        "title": "Dastur kimlar uchun mo‘ljallangan",
+        "subtitleLeft": "Siz dasturga mos kelasiz, agar:",
+        "subtitleRight": "Dastur Sizga mos emas, agar:",
         "left": [
-            "Jamoa bilan ishlashni istasangiz. Biz bilan siz hamfikrlar jamiyatiga qo'shilasiz, bu yerda qo‘llab-quvvatlash, maslahat va ilhomlantiruvchi do‘stlarni topish oson.",
-            "Muvaffaqiyat sari intilasiz. Bizning dasturlarimiz bozor talablarini hisobga olgan holda ishlab chiqilgan va biz sizga orzuingizdagi karyeraga yetaklaydigan ko'nikmalarni shakllantirishga yordam beramiz.",
-            "Amaliy tajribani qadrlaysiz. Quruq nazariya o'rniga, biz real loyihalarga e’tibor qaratamiz, ular sizning portfelingizning bir qismiga aylanishi mumkin.",
-            "Doimiy o'rganishga va rivojlanishga ochiqsiz. IT sohasida moslashuvchanlik muhim va biz bilan siz har doim so'nggi texnologiyalardan xabardor bo'lasiz."
+            "Siz muvaffaqiyatga intilasiz. Bizning dasturlarimiz bozor talablari asosida ishlab chiqilgan bo‘lib, sizning orzuingizdagi karyeraga erishish uchun zarur ko‘nikmalarni rivojlantirishga yordam beradi.",
+            "Siz amaliy tajribani qadrlaysiz. Quruq nazariyadan ko‘ra, biz portfelingizga qo‘shishingiz mumkin bo‘lgan haqiqiy loyihalarga e’tibor qaratamiz.",
+            "Siz doimiy o‘qish va rivojlanishga ochiqsiz. IT sohasida moslashuvchanlik muhim, va biz bilan siz eng so‘nggi texnologiyalardan xabardor bo‘lasiz."
         ],
         "right": [
-            "O‘qishga vaqt ajratishga tayyor bo‘lmasangiz. Yangi bilimlarni egallash vaqt va kuch talab qiladi va muvaffaqiyat, birinchi navbatda, sizning ishtiyoqingizga bog'liq.",
-            "Amaliy ko‘nikmalarga qiziqmasangiz. Bizning dasturlarimiz real vazifalarga sho‘ng‘ishga va olingan bilimlarni faol qo‘llashga tayyor bo‘lganlar uchun mo‘ljallangan.",
-            "Tayyor yechimlarni izlayotgan bo‘lsangiz. IT sohasida mustaqil yechim topish va yangi narsalarga moslashish muhim; StartIT.uz o‘sishga va rivojlanishga tayyor bo‘lganlar uchun yaratilgan."
+            "O‘qishga vaqt ajratishga tayyor emassiz. Yangi bilimlarni egallash vaqt va kuch talab qiladi, va muvaffaqiyat asosan sizning qat’iyatingizga bog‘liq.",
+            "Amaliy ko‘nikmalarni qo‘llashni xohlamaysiz. Bizning dasturlarimiz haqiqiy vazifalarni bajarishga va olingan bilimlarni faol qo‘llashga tayyor bo‘lganlar uchun mo‘ljallangan.",
+            "Tayyor yechimlarni izlayapsiz. IT sohasida mustaqil muammolarni hal qilish va yangi sharoitlarga moslashish muhim; StartIT.uz rivojlanishga tayyor bo‘lganlar uchun mo‘ljallangan."
         ]
     },
     "reviews": {
@@ -71,5 +70,116 @@
         "mentor": "Kurs mentori:",
         "lessonCount": "Darslar soni:",
         "lessonLink": "Kurs sahifasiga o‘tish"
-    }
+    },
+    "course": {
+        "price": "Kurs narxi",
+        "mentor": "Mentor:",
+        "programTitle": "Kurs dasturi",
+        "play": "Darsni boshlash"
+    },
+    "mentors": {
+        "title": "Mentorlar",
+        "experience": "yillik tajriba",
+        "session": "Shaxsiy sessiya"
+    },
+    "events": {
+        "title": "Tadbirlar va faoliyatlar"
+    },
+    "faq": {
+        "title": "Tez-tez beriladigan savollar",
+        "questions": [
+            {
+                "question": "IT’da yangiman. Bu platformadagi kurslar menga to‘g‘ri keladimi?",
+                "text": "Platformada turli darajadagi kurslar mavjud. Har bir kurs sahifasida ularda ta’lim olish uchun qanday bilim va ko‘nikmaga ega bo‘lish kerakligi belgilab qo‘yilgan."
+            },
+            {
+                "question": "Kurslar yakunida sertifikat beriladimi?",
+                "text": "Albatta. Bepul kursda ta’lim olgan bo‘lsangiz, ushbu kurs sertifikatini sotib olishingiz mumkin. Kurs uchun to‘lov amalga oshirgan bo‘lsangiz, sertifikat bepul taqdim etiladi."
+            },
+            {
+                "question": "Mentorlar kimlar va ularni band qilish nima degani?",
+                "text": "Mentorlar - IT’ning turli yo‘nalishlari bo‘yicha bir necha yildan buyon muvaffaqiyatli faoliyat yuritib kelayotgan mutaxassislar. Mentorlarni band qilish deganda ulardan onlayn konsultatsiya olish uchun vaqt belgilash tushuniladi."
+            },
+            {
+                "question": "Mentorlar bilan onlayn konsultatsiya nima?",
+                "text": "Mentorlar bilan onlayn konsultatsiya - 30 daqiqga mo‘ljallangan onlayn uchrashuv. Ushbu uchrashuv Zoom platformasida bo‘lib o‘tadi. Konsultatsiya davomida IT sohasida ta’lim olish, yo‘nalish tanlash, karyera qurish, IT loyihalar ishlab chiqish va ularni boshqarish kabi yo‘nalishlar bo‘yicha o‘zingizni qiziqtirgan savollarga javob olishingiz mumkin. Konsultatsiya uchun maxsus dastur mavjud emas: imkoniyatdan samarali foydalanish uchun savollaringizni oldindan tayyorlab olishingizni maslahat beramiz."
+            },
+            {
+                "question": "Mentorlarni band qilish uchun Zoom platformasida akkaunt ochish kerakmi?",
+                "text": "Yo‘q, bizning platformada ro‘yxatdan o‘tishning o‘zi kifoya."
+            }
+        ]
+    },
+    "login": {
+        "login": "Kirish",
+        "email": "Elektron pochta",
+        "password": "Parol"
+    },
+    "registration": {
+        "registration": "Ro‘yxatdan o‘tish",
+        "email": "Elektron pochta",
+        "password": "Parol",
+        "firstName": "Ismingiz",
+        "lastName": "Familiyangiz"
+    },
+    "footer": [
+        {
+            "title": "Sayt menyusi",
+            "links": [
+                {
+                    "text": "Bosh sahifa",
+                    "link": "/"
+                },
+                {
+                    "text": "Kurslar",
+                    "link": "/courses"
+                },
+                {
+                    "text": "Mentorlar",
+                    "link": "/mentors"
+                },
+                {
+                    "text": "Yangiliklar",
+                    "link": "/events"
+                },
+                {
+                    "text": "Savol-javob",
+                    "link": "/faq"
+                }
+            ]
+            },
+            {
+            "title": "Ro‘yxatdan o‘tish",
+            "links": [
+                {
+                    "text": "Kirish",
+                    "link": "/login"
+                },
+                {
+                    "text": "Ro‘yxatdan o‘tish",
+                    "link": "/registration"
+                }
+            ]
+            },
+            {
+            "title": "Biz bilan bog‘lanish",
+            "links": [
+                {
+                    "text": "+998 (33) 999 99 99",
+                    "icon": "Phone",
+                    "link": "tel:+998339999999"
+                },
+                {
+                    "text": "itc4allcompany@gmail.com",
+                    "icon": "Email",
+                    "link": "mailto:itc4allcompany@gmail.com"
+                },
+                {
+                    "text": "Toshkent shahri, Olmazor tumani, Sag‘bon 30 berk ko‘chasi, 79-uy",
+                    "icon": "Location",
+                    "link": "https://maps.app.goo.gl/EZdHKLT9jytN43pG8"
+                }
+            ]
+            }
+        ]      
 }
