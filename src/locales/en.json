@@ -5,7 +5,8 @@
             "Courses",
             "Mentors",
             "Events",
-            "FAQ"
+            "FAQ",
+            "Profile"
         ],
         "authorization": [
             "Login",
@@ -181,5 +182,74 @@
                 }
             ]
         }
-    ]      
+    ],
+    "sidebar": {
+        "links": [
+            {
+                "path": "/user/profile",
+                "text": "Home",
+                "icon": "Home"
+            },
+            {
+                "path": "/courses",
+                "text": "Courses",
+                "icon": "Payment"
+            },
+            {
+                "path": "/user/sessions",
+                "text": "Meetings with Mentors",
+                "icon": "Meeting"
+            },
+            {
+                "path": "/user/profile-edite",
+                "text": "Edit Profile",
+                "icon": "Profile"
+            },
+            {
+                "path": "/login",
+                "text": "Log Out",
+                "icon": "Logout"
+            }
+        ]        
+    },
+    "profile": {
+        "title": "Your Courses:",
+        "message": "Courses purchased so far: 0",
+        "edite": {
+            "role": "Student",
+            "button": "Edit profile",
+            "page": {
+                "upload": "Upload your file",
+                "uploadMessage": "Accepted formats: PNG, JPG, and WEBP",
+                "title": "Edit Profile",
+                "city": "City",
+                "country": "Country",
+                "email": "Email",
+                "password": "Password",
+                "update": "Update"
+            }
+        }
+    },
+    "zoomSession": {
+        "title": "Meetings with Mentors",
+        "desc": "Details of meetings organized with mentors on the Zoom platform Learn More",
+        "link": "Learn more"
+    },
+    "welcome": {
+      "title": "Welcome to your startit.uz personal dashboard",
+      "subtitle": "Here you can flexibly manage your courses, session schedules, and profile"
+    },
+    "authRequired": {
+        "register": "ro‘yxatdan o‘tishingiz",
+        "login": "tizimga kirishingiz",
+        "message": "Kursni xarid qilish uchun <router-link to='/registration'>ro‘yxatdan o‘tishingiz</router-link> yoki <router-link to='/login'>tizimga kirishingiz</router-link> kerak"
+    },
+    "registrationConfirmation": {
+        "title": "Registration Confirmation",
+        "text1": "To complete your registration, please check your email and follow the link in the email to confirm your account.",
+        "text2": "If you don’t see the email, please check your <strong>\"Spam\"</strong> folder.",
+        "text3": "Once confirmed, you can log into your account or click the continue button to check the verification.",
+        "errorMessage": "This user has not been verified, please follow the instructions above!",
+        "button": "Continue"
+    }
 }

@@ -15,7 +15,7 @@
                     </ul>
                 </nav>
                 <div class="navbar__other">
-                    <div class="navbar__login">
+                    <div class="navbar__login" v-if="getProfile.status !== 200">
                         <ul class="navbar__login-ul">
                             <li v-for="item in registrationLinks" :key="item" class="navbar__login-link">
                                 <router-link :to="item.to" class="navbar__link">{{ item.text }}</router-link>
@@ -55,6 +55,8 @@
 
 import Arrow from '@/components/icons/navbar/Arrow.vue';
 import MobileNavbar from './MobileNavbar.vue';
+
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
     data: () => ({
@@ -102,7 +104,13 @@ export default {
         MobileNavbar
     },
 
+    computed: {
+        ...mapGetters(['getProfile'])
+    },
+
     methods: {
+        ...mapActions(['fetchProfile']),
+
         toggleLangs () {
             this.lang = !this.lang;
 
@@ -154,7 +162,7 @@ export default {
         }
     },
 
-    mounted () {
+    async mounted () {
         const lang = localStorage.getItem('locale');
 
         if (!lang) {
@@ -216,6 +224,18 @@ export default {
                     to: link.to,
                     text: messages.navbar.authorization[index]
                 }
+            })
+        }
+
+        await this.fetchProfile();
+        if (this.getProfile.status === 200) {
+            this.navbarLinks.push({
+                text: this.$i18n.locale === 'rus'
+                ? 'Профиль'
+                : this.$i18n.locale === 'eng'
+                    ? 'Profile'
+                    : 'Profil',
+                to: '/user/profile'
             })
         }
     }

@@ -13,7 +13,7 @@
                 <h2 class="courses__price-title">{{ $t('course.price') }}</h2>
                 <p class="courses__price-now">{{ preview.price }} so'm</p>
                 <p class="courses__price-full">{{ preview.fullPrice }} so'm</p>
-                <form id="form-payme" class="courses__info-form" method="POST" action="https://checkout.paycom.uz/" v-if="preview">
+                <form id="form-payme" class="courses__info-form" method="POST" action="https://checkout.paycom.uz/" v-if="preview && getProfile.status === 200 && !access">
                     <input type="hidden" name="merchant" value="66e5b04e8cc73123c0128fd2">
                     <input type="hidden" name="account[user_email]" :value="profile.email">
                     <input type="hidden" name="account[user_name]" :value="profile.first_name + ' ' + profile.last_name">
@@ -22,11 +22,17 @@
                     <input type="hidden" name="account[product_type]" value="COURSE">
                     <input type="hidden" name="account[start_time]" value="2024-10-15T14:30:00Z">
                     <input type="hidden" name="account[duration]" value="На всегда">
+                    <input type="hidden" name="account[product_uuid]" value="4vme4f0b-8c1d-4a2b-9c3d-5f7e6a0e8b1d">
+                    <input type="hidden" name="account[UUID]" value="V4">
+                    <input type="hidden" name="account[product_timestamp]" :value="Date.now()">
                     <input type="hidden" name="amount" :value="preview.price * 100">
                     <input type="hidden" name="lang" value="ru">
                     <input type="hidden" name="button" data-type="svg" value="colored">
                     <div id="button-container"></div>
                 </form>
+                <p class="courses__buy-message" v-else-if="preview && getProfile.status !== 200">
+                    <span v-html="$t('authRequired.message')"></span>
+                </p>
             </div>
         </div>
     </div>
@@ -34,14 +40,20 @@
 
 <script>
 import { fetchVideo } from '@/api/axios';
+import { get } from 'lodash';
 import { mapActions, mapGetters } from 'vuex';
+import { checkAccessCourse } from '@/api/axios';
+
+import Hls from 'hls.js';
+import { v4 as uuid } from 'uuid';
 
 export default {
     data: () => ({
         videoUrl: '',
         video: false,
         profile: {},
-        course: {}
+        course: {},
+        access: false,
     }),
 
     props: {
@@ -71,6 +83,11 @@ export default {
             }
         },
 
+        async checkAccess() {
+            const access = await checkAccessCourse(this.$route.params.id);
+            this.access = access;
+        },
+
         initializeHLSPlayer() {
             if (Hls.isSupported()) {
                 const video = this.$refs.videoPlayer;
@@ -95,6 +112,8 @@ export default {
     },
 
     async mounted() {
+        await this.checkAccess();
+
         setTimeout(() => {
             Paycom.Button('#form-payme', '#button-container');
         }, 500);

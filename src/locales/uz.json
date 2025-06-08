@@ -180,6 +180,75 @@
                     "link": "https://maps.app.goo.gl/EZdHKLT9jytN43pG8"
                 }
             ]
+        }
+    ],
+    "sidebar": {
+        "links": [
+            {
+                "path": "/user/profile",
+                "text": "Bosh sahifa",
+                "icon": "Home"
+            },
+            {
+                "path": "/courses",
+                "text": "Sizning kurslar",
+                "icon": "Payment"
+            },
+            {
+                "path": "/user/sessions",
+                "text": "Mentorlar bilan uchrashuvlar",
+                "icon": "Meeting"
+            },
+            {
+                "path": "/user/profile-edite",
+                "text": "Profilni tahrirlash",
+                "icon": "Profile"
+            },
+            {
+                "path": "/login",
+                "text": "Chiqish",
+                "icon": "Logout"
             }
-        ]      
+        ]        
+    },
+    "profile": {
+        "title": "Sizning kurslar:",
+        "message": "Hozirga qadar sotib olingan kurslar: 0",
+        "edite": {
+            "role": "Talaba",
+            "button": "Profilni tahrirlash",
+            "page": {
+                "upload": "Faylni yuklang",
+                "uploadMessage": "PNG, JPG va WEBP formatlari qabul qilinadi",
+                "title": "Profilni tahrirlash",
+                "city": "Shahar",
+                "country": "Mamlakat",
+                "email": "Elektron pochta",
+                "password": "Parol",
+                "update": "O‘zgartirish"
+            }
+        }
+    },
+    "zoomSession": {
+        "title": "Mentorlar bilan uchrashuvlar",
+        "desc": "Zoom platformasida mentorlar bilan tashkil etilgan uchrashuvlar ma’lumotlari Batafsil",
+        "link": "Batafsil"
+    },
+    "welcome": {
+      "title": "startit.uz shaxsiy kabinetingizga xush kelibsiz",
+      "subtitle": "Bu yerda siz kurslar, sessiyalar jadvali va profilingizni qulay boshqarishingiz mumkin"
+    },
+    "authRequired": {
+        "register": "ro‘yxatdan o‘tishingiz",
+        "login": "tizimga kirishingiz",
+        "message": "Kursni xarid qilish uchun <router-link to='/registration'>ro‘yxatdan o‘tishingiz</router-link> yoki <router-link to='/login'>tizimga kirishingiz</router-link> kerak"
+    },
+    "registrationConfirmation": {
+        "title": "Ro'yxatni tasdiqlash",
+        "text1": "Ro'yxatni yakunlash uchun, iltimos, elektron pochta manzilingizni tekshirib, hisobingizni tasdiqlash uchun xatdagi havolaga o'ting.",
+        "text2": "Agar xatni ko'rmasangiz, iltimos, <strong>\"Spam\"</strong> papkasini tekshirib ko'ring.",
+        "text3": "Tasdiqlashdan so'ng, siz hisobingizga kirishingiz yoki tekshiruvni tasdiqlash uchun davom etish tugmasini bosishingiz mumkin.",
+        "errorMessage": "Ushbu foydalanuvchi tasdiqlanmagan, iltimos, yuqoridagi ko'rsatmalarga amal qiling!",
+        "button": "Davom etish"
+    }
 }

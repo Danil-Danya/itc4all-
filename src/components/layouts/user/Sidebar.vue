@@ -13,7 +13,7 @@
             </div>
             <ul class="sidebar__list" v-if="activeBar">
                 <li v-for="link in links" :key="link">
-                    <router-link :to="link.path" class="sidebar__link" :class="$route.path === link.path ? 'sidebar__link-active' : null">
+                    <router-link :to="link.path" class="sidebar__link" :class="$route.path === link.path ? 'sidebar__link-active' : null" @click="logout(link, $event)">
                         <span class="sidebar__icon">
                             <component :is="link.icon" />
                         </span>
@@ -37,17 +37,19 @@ export default {
     data: () => ({
         activeBurger: false,
         activeBar: false,
+        langs: ['Рус', 'Eng', 'Uzb'],
+        locales: ['rus', 'eng', 'uzb'],
         links: [
             {
                 path: '/user/profile',
                 text: 'Домашняя',
                 icon: Home,
             },
-            // {
-            //     path: '/user/courses',
-            //     text: 'Payment',
-            //     icon: Payment,
-            // },
+            {
+                path: '/courses',
+                text: 'Курсы',
+                icon: Payment,
+            },
             {
                 path: '/user/sessions',
                 text: 'Zoom сессии',
@@ -70,12 +72,30 @@ export default {
         toggleFullBar () {
             this.activeBurger = !this.activeBurger;
             this.activeBar = !this.activeBar;
+        },
+
+        logout (link, event) {
+            if (link.path === '/login') {
+                event.preventDefault();
+
+                localStorage.removeItem('access_token');
+                this.$router.replace({ path: '/login' });
+            }
         }
     },
 
     mounted () {
         if (window.innerWidth > 1000) {
             this.activeBar = true;
+        }
+
+        const locale = localStorage.getItem('locale');
+
+        for (let i = 0; i < this.langs.length; i++) {
+            if (this.langs[i] === locale) {
+                this.links = this.$i18n.messages[this.locales[i]].sidebar.links;
+                this.$i18n.locale = this.locales[i];
+            }
         }
     }
 }

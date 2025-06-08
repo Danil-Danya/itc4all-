@@ -19,6 +19,7 @@
     "hls.js": "^1.0.3-0.canary.7275",
     "lodash": "^4.17.21",
     "swiper": "^11.1.9",
+    "uuid": "^11.1.0",
     "vite-plugin-commonjs": "^0.10.4",
     "vite-plugin-require": "^1.2.14",
     "vue": "^3.4.29",

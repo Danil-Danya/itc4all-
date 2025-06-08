@@ -16,27 +16,27 @@
                         <div class="login__input-container">
                             <label class="login__label">{{ $t('registration.email') }}</label>
                             <input type="email" class="login__input" v-model="email">
-                            <p v-if="v$.$dirty || !v$.email.required" class="login__message">Почта обязательна</p>
-                            <p v-else-if="v$.$dirty || !v$.email.email" class="login__message">Неверный формат почты</p>
+                            <!-- <p v-if="v$.$dirty || !v$.email.required" class="login__message">Почта обязательна</p>
+                            <p v-else-if="v$.$dirty || !v$.email.email" class="login__message">Неверный формат почты</p> -->
                         </div>
                         <div class="login__input-container">
                             <label class="login__label">{{ $t('registration.password') }}</label>
                             <input type="password" class="login__input" v-model="password">
-                            <p v-if="v$.$dirty || !v$.password.required" class="login__message">Пароль обязателен</p>
-                            <p v-else-if="v$.$dirty || !v$.password.minLength" class="login__message">Пароль должен содержать минимум 8 символов</p>
+                            <!-- <p v-if="v$.$dirty || !v$.password.required" class="login__message">Пароль обязателен</p>
+                            <p v-else-if="v$.$dirty || !v$.password.minLength" class="login__message">Пароль должен содержать минимум 8 символов</p> -->
                         </div>
                         <div class="login__input-container">
                             <label class="login__label">{{ $t('registration.firstName') }}</label>
                             <input type="text" class="login__input" v-model="first_name">
-                            <p v-if="v$.$dirty || !v$.first_name.required" class="login__message">Имя обязательно</p>
+                            <!-- <p v-if="v$.$dirty || !v$.first_name.required" class="login__message">Имя обязательно</p> -->
                         </div>
                         <div class="login__input-container">
                             <label class="login__label">{{ $t('registration.lastName') }}</label>
                             <input type="text" class="login__input" v-model="last_name">
-                            <p v-if="v$.$dirty || !v$.last_name.required" class="login__message">Фамилия обязательна</p>
+                            <!-- <p v-if="v$.$dirty || !v$.last_name.required" class="login__message">Фамилия обязательна</p> -->
                         </div>
                     </div>
-                    <button class="login__button login__button-registr" @click="registration">Зарегистрироваться</button>
+                    <button class="login__button login__button-registr" @click="registration">{{ $t('registration.registration') }}</button>
                 </form>
             </div>
         </div>

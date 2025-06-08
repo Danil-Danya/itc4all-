@@ -21,7 +21,8 @@
                             <p class="login__message"></p>
                         </div>
                     </div>
-                    <button class="login__button" @click.prevent="login">Войти</button>
+                    <p class="message">{{ message }}</p>
+                    <button class="login__button" @click.prevent="login">{{ $t('login.login') }}</button>
                 </form>
             </div>
         </div>
@@ -33,13 +34,39 @@
 import { login } from '@/api/axios';
 
 export default {
+    data: () => ({
+        email: '',
+        password: '',
+        message: ''
+    }),
+
     methods: {
         async login () {
-            const { email, password } = this;
-            await login({ email, password });
-
-            if (localStorage.getItem('access_token')) {
-                this.$router.replace({ path: '/user/profile' })
+            try {
+                const { email, password } = this;
+                const loginResponse = await login({ email, password });
+    
+                if (localStorage.getItem('access_token') && loginResponse.status === 200) {
+                    this.$router.replace({ path: '/user/profile' })
+                }
+                else {
+                    console.log(111);
+                    
+                    switch (localStorage.getItem('locale')) {
+                        case 'Рус':
+                            this.message = 'Неверный логин или пароль';
+                            break;
+                        case 'Eng':
+                            this.message = 'Invalid login or password';
+                            break;
+                        case 'Uzb':
+                            this.message = 'Noto\'t login yoki parol';
+                            break;
+                    }
+                }
+            }
+            catch (error) {
+                console.error('Error during login:', error);
             }
         }
     }

@@ -130,6 +130,8 @@ export default {
         const locale = this.$i18n.locale;
         const messages = this.$i18n.messages[locale].reviews;
 
+        document.addEventListener('resize', this.updateSizeWindow());
+
         if (messages && Array.isArray(messages.slides)) {
             messages.slides.forEach((element, index) => {
                 this.slides[index].name = element.name;

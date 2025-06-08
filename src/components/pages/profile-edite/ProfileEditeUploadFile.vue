@@ -9,10 +9,10 @@
                     <Upload />
                 </span>
                 <input type="file" @change="onFileSelected" class="profile__upload-input">
-                <h2 class="profile__upload-title">Загрузите файл</h2>
-                <p class="profile__upload-text">Доступные форматы PNG, JPG, и WEBP</p>
+                <h2 class="profile__upload-title">{{ $t('profile.edite.page.upload') }}</h2>
+                <p class="profile__upload-text">{{ $t('profile.edite.page.uploadMessage') }}</p>
             </div>
-            <button @click.prevent="uploadAvatar" class="profile__upload-button">Изменить</button>
+            <button @click.prevent="uploadAvatar" class="profile__upload-button">{{ $t('profile.edite.page.update') }}</button>
         </form>
     </div>
 </template>
@@ -36,11 +36,11 @@ export default {
     },
 
     computed: {
-        ...mapGetters(['getProfile'])
+        ...mapGetters(['getProfile', 'getUser']),
     },
 
     methods: {
-        ...mapActions(['fetchProfile']),
+        ...mapActions(['fetchProfile', 'fetchUser']),
 
         onFileSelected(event) {
             const file = event.target.files[0];
@@ -54,16 +54,19 @@ export default {
 
         async uploadAvatar() {
             if (!this.selectedFile) {
-                //alert("Пожалуйста, выберите файл!");
+                alert("Пожалуйста, выберите файл!");
                 return;
             }
 
+
             const formData = new FormData();
+
             formData.append('file', this.selectedFile);
+            formData.append('id', this.userId);
 
             try {
-                await updateUserAvatar(this.userId, formData);
-                //window.location.reload();
+                await updateUserAvatar(formData);
+                window.location.reload();
             } catch (error) {
                 console.error("Ошибка при загрузке файла:", error);
                 alert('Ошибка при загрузке файла');
@@ -73,10 +76,8 @@ export default {
 
     async mounted () {
         await this.fetchProfile();
-        this.userId = this.getProfile.data.profile_id;
-
-        console.log(this.userId);
-        
+        await this.fetchUser(this.getProfile.data.profile_id);
+        this.userId = this.getUser.id;
     }
 };
 </script>

@@ -2,10 +2,19 @@ import axios from "axios";
 
 const api = axios.create({
     baseURL: import.meta.env.VITE_APP_BASE_URL,
-    headers: {
-        'Authorization': `Bearer ${localStorage.getItem('access_token')}`
-    }
 });
+
+api.interceptors.request.use(
+    config => {
+        const token = localStorage.getItem('access_token');
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`;
+        }
+        return config;
+    },
+    error => Promise.reject(error)
+);
+
 
 const registration = async (data) => {
     try {
@@ -31,12 +40,21 @@ const registration = async (data) => {
 
 
 const login = async (data, params) => {
-    const response = await api.post('login', data);
-    const accessToken = response.data.accessTocken;
-
-    localStorage.setItem('access_token', accessToken);
-
-    return response.data;
+    try {
+        const response = await api.post('login', data);
+        const accessToken = response.data.accessTocken;
+    
+        if (response.status === 200) {
+            localStorage.setItem('access_token', accessToken);
+            api.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
+        }
+    
+        return response;
+    }
+    catch (error) {
+        console.log(error);
+        return error.response;
+    }
 }
 
 const profile = async (data, params) => {
@@ -44,8 +62,16 @@ const profile = async (data, params) => {
     return response;
 }
 
-const fetchUsers = async (url, params) => {
+const fetchUsers = async (params) => {}
 
+const fetchUser = async (id) => {
+    try {
+        const response = await api.get(`users/${id}`);
+        return response.data;
+    }
+    catch (error) {
+        console.log(error);
+    }
 }
 
 const fetchMentors = async (params) => {
@@ -135,8 +161,8 @@ const fetchOneZoomSession = async (id, params) => {
     return response
 }
 
-const updateUserAvatar = async (id, data, params) => {
-    const response = await api.patch(`/user-edited-avatar/${id}`, data, {
+const updateUserAvatar = async (data, params) => {
+    const response = await api.patch(`/user-edited-avatar`, data, {
         headers: {
             'Content-Type': 'multipart/form-data'
         }
@@ -161,11 +187,50 @@ const sendRequest = async (phone, name, message) => {
     }
 }
 
+const checkAccessCourse = async (courseId) => {
+    try {
+        const response = await api.post(`videos/check/${courseId}`);
+        const access = response.data;
+
+        const accessed = access.status === 'success' && access.message === 'Transaction found' ? true : false;
+        return accessed;
+    }
+    catch (error) {
+        console.error('Error checking course access:', error);
+    }
+} 
+
+const editedProfile = async (id, data) => {
+    try {
+        const response = await api.patch(`/user-edit-profile/${id}`, data);
+        return response;
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
+const fetchTransactions = async () => {
+    try {
+        const response = await api.get('transactions', {
+            params: {
+                page: 1,
+                limit: 10000000
+            }
+        });
+        return response.data;
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
 export {
     registration,
     login,
     profile,
     fetchUsers,
+    fetchUser,
     fetchMentors,
     fetchEvents,
     fetchOneMentor,
@@ -177,6 +242,9 @@ export {
     fetchOneZoomSession,
     updateUserAvatar,
     headersVideo,
+    checkAccessCourse,
     //fetchSertificate,
-    sendRequest
+    sendRequest,
+    fetchTransactions,
+    editedProfile
 }
